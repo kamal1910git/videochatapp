@@ -1,0 +1,219 @@
+
+.home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 2% !important;
+}
+.call-exit-button,
+.hangup-button,
+.audio-button-true,
+.audio-button-false,
+.video-button-true,
+.video-button-false,
+.fullscreen-button {
+    width: 3em;
+    height: 3em;
+    border-radius: 50%;
+    background: rgba(44, 44, 44, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 0;
+    box-shadow: .2ex .2ex 1.5em #444;
+    transition: all .2s ease-out;
+    margin: 0 .4em;
+    cursor: pointer;
+}
+.call-exit-button:hover,
+.hangup-button:hover,
+.audio-button-true:hover,
+.audio-button-false:hover,
+.video-button-true:hover,
+.video-button-false:hover,
+.fullscreen-button:hover {
+    box-shadow: .4ex .4ex 3em #666;
+    background: rgba(64, 124, 247, 1)
+}
+.you-left,
+.remote-left,
+.hangup-button,
+.audio-button-true .on,
+.video-button-true .on,
+.video-button-false .off,
+.fullscreen-button .on,
+.room-occupied {
+	display: none;
+}
+:-webkit-full-screen .fullscreen-button .on {
+    display: block;
+}
+:-moz-full-screen .fullscreen-button .on {
+    display: block;
+}
+:-ms-fullscreen .fullscreen-button .on {
+    display: block;
+}
+:fullscreen .fullscreen-button .on { /* spec */
+    display: block;
+}
+:-webkit-full-screen .fullscreen-button .off {
+    display: none;
+}
+:-moz-full-screen .fullscreen-button .off {
+    display: none;
+}
+:-ms-fullscreen .fullscreen-button .off {
+    display: none;
+}
+:fullscreen .fullscreen-button .off { /* spec */
+    display: none;
+}
+/* deeper elements */
+:-webkit-full-screen video {
+  width: 50%;
+  height: 50%;
+}
+.guest-hangup + .auth .you-left {
+    display: inline;
+}
+.full .room-occupied,
+.host-hangup + .auth .remote-left,
+.recent-room {
+	display: block;
+}
+.recent-room {
+    color: #4285F4;
+    margin: 1ex 1em;
+}
+.remote-video {
+    display: block;
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: contain;
+}
+.local-video {
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: contain;
+    transition: all .3s;
+}
+.established .local-video {
+	vertical-align: top !important;
+    float: right;
+}
+.media-bridge {
+    height: 100%;
+    width: 100%;
+}
+.local-video {
+    height: 50%;
+    width: 50%;
+    vertical-align: top !important;
+    float: right;
+    padding:10px;
+}
+.remote-video {
+    height: 50%;
+    width: 50%;
+    float: left;
+    vertical-align: top !important;
+    padding:10px;
+}
+.auth {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width:100%;
+    padding-bottom:70px;
+}
+.primary-button {
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    background-color: #4285F4;
+    border: none;
+    color: white;
+    font-size: 0.8em;
+    margin: 0 5px 20px 5px;
+    width: 10em;
+    line-height: 3ex;
+    padding: 1ex 0.7em;
+    text-align: center;
+    -webkit-box-shadow: 1px 1px 5px 0 rgba(0,0,0,.5);
+    -moz-box-shadow: 1px 1px 5px 0 rgba(0,0,0,.5);
+    box-shadow: 1px 1px 5px 0 rgba(0,0,0,.5);
+}
+.media-controls {
+    display: flex;
+    margin: 2ex 0;
+    justify-content: center;
+    left: 0;
+    right: 0;
+}
+.svg {
+    width: 1.4em;
+}
+.room-occupied,
+.request-access,
+.waiting,
+.request-access,
+.grant-access,
+.waiting {
+    overflow: hidden;
+    padding: 0 1em;
+    box-sizing: border-box;
+    width: 100%;    
+    max-height: 0;
+    transition: max-height .3s ease;
+}
+.full + .auth .room-occupied,
+.guest-hangup + .auth .request-access,
+.join + .auth .request-access,
+.approve + .auth .grant-access {
+    transition-delay: .3s;
+    /* Set the max-height to something large. In this case there's an obvious limit. */
+    max-height: 20ex;
+}
+.host-hangup + .auth .waiting,
+.create + .auth .waiting {
+    /* Set the max-height to something large. In this case there's an obvious limit. */
+    max-height: 20ex;
+}
+.established + .auth .hangup-button {
+    display: flex;
+}
+.errorInfo
+{
+    color:red;
+    font-size: 15px;
+}
+.paragraph{
+    color:#7c64a8 !important;
+}
+
+.btn-grey
+{
+    background-color: grey !important;
+    border: darkgrey !important;
+}
+
+.ui-dialog .ui-dialog-buttonpane button
+{
+    background-color: #f4146f !important;
+    color: #fff !important;
+    font-weight: bold !important;
+}
+
+.emailText{
+    width: 100%;
+    height: 2.5em;
+    border-width: 0.2em;
+    border-color: #ccc;
+    font-size: 1.2em;
+}
